@@ -7,7 +7,7 @@ const { sanitizeResponse } = require('../helpers')
 router.use(getProfile);
 router.get('/unpaid', async (req, res) => {
     try {
-        const jobs = await getUnpaidJobs();
+        const jobs = await getUnpaidJobs(req.profile.id);
         res.status(200).json({ success: true, jobs });
     } catch (error) {
         res.status(500).json({ success: false, message: error.message });

@@ -4,14 +4,14 @@ const { Op } = require("sequelize");
 const getContractById = async (id, profileId) => {
     const condition = {
         id,
-        [Op.and]: [{ ClientId: profileId }],
+        ClientId: profileId
     };
     return await Contract.findOne({ where: condition });
 };
 
 const getContracts = async profileId => {
     const condition = {
-        ClientId: profileId,
+        [Op.or]: [{ ClientId: profileId }, { ContractorId: profileId }],
         status: { [Op.ne]: "terminated" },
     };
     return await Contract.findAll({ where: condition });
