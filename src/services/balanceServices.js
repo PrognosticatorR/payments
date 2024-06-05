@@ -26,9 +26,7 @@ const depositMoney = async (userId, amount) => {
     const totalToPay = unpaidJobs.reduce((sum, job) => sum + job.price, 0);
     const maxDeposit = totalToPay * 1.25;
 
-    if (amount > maxDeposit) {
-        throw new Error("Exceeds maximum deposit limit");
-    }
+    if (amount > maxDeposit) throw new Error("Exceeds maximum deposit limit");
 
     // Wrap only the balance increment in a transaction
     await sequelize.transaction(async (t) => {
