@@ -1,4 +1,4 @@
-const { Contract } = require("../model");
+const { Contract } = require("@root/model");
 const { Op } = require("sequelize");
 
 const getContractById = async (id, profileId) => {

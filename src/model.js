@@ -4,14 +4,14 @@ const sequelize = new Sequelize({
     dialect: "sqlite",
     storage: "./database.sqlite3",
     pool: {
-        max: 100,
-        min: 1,
-        acquire: 20000,
+        max: 50,
+        min: 0,
+        acquire: 30000,
         idle: 10000,
     },
 });
 
-class Profile extends Sequelize.Model {}
+class Profile extends Sequelize.Model { }
 Profile.init(
     {
         firstName: {
@@ -39,7 +39,7 @@ Profile.init(
     }
 );
 
-class Contract extends Sequelize.Model {}
+class Contract extends Sequelize.Model { }
 Contract.init(
     {
         terms: {
@@ -56,7 +56,7 @@ Contract.init(
     }
 );
 
-class Job extends Sequelize.Model {}
+class Job extends Sequelize.Model { }
 Job.init(
     {
         description: {

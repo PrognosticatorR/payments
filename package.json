@@ -10,9 +10,18 @@
         "express": "^4.19.2",
         "helmet": "^7.1.0",
         "lodash": "^4.17.21",
+        "module-alias": "^2.2.3",
         "morgan": "^1.10.0",
         "sequelize": "^6.23.0",
         "sqlite3": "^5.0.0"
+    },
+    "_moduleAliases": {
+        "@services": "src/services",
+        "@middleware": "src/middleware",
+        "@utils": "src/utils",
+        "@constants": "src/constants",
+        "@routes": "src/routes",
+        "@root": "src"
     },
     "scripts": {
         "start": "nodemon ./src/server.js",

@@ -5,11 +5,12 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const compression = require("compression");
 const cors = require("cors");
+require('module-alias/register');
 
-const adminRoutes = require("./routes/adminRoutes");
-const balanceRoutes = require('./routes/balanceRoutes');
-const contractRoutes = require("./routes/contractRoutes");
-const jobRoutes = require("./routes/jobRoutes");
+const adminRoutes = require("@routes/adminRoutes");
+const balanceRoutes = require('@routes/balanceRoutes');
+const contractRoutes = require("@routes/contractRoutes");
+const jobRoutes = require("@routes/jobRoutes");
 
 const app = express();
 dotenv.config();
